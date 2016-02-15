@@ -5,9 +5,10 @@ socket.on('connect', function() {
 })
 
 socket.on('message', function(message) {
+	var momentTimestamp = moment.utc(message.timestamp);
 	console.log("custom event invoked")
 	console.log(message.text);
-	jQuery('.messages').append('<p>' + message.text + '</p>');
+	jQuery('.messages').append('<p> <strong>' + momentTimestamp.format('hmma') + ' : </strong>   ' + message.text + '</p>');
 })
 
 
