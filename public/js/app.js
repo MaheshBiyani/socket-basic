@@ -2,6 +2,7 @@ var name = getQueryVariable('name') || 'Anonymous';
 var room = getQueryVariable('room');
 
 console.log(name +" wants to join " + room);
+jQuery('.room-title').text(room);
 
 var socket = io();
 
